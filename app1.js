@@ -2,15 +2,15 @@ console.log('Hello World');
 const express = require('express')
 const axios = require('axios')
 const app = express()
-const port = 3000
+const port = 4001;
 //end point 
 
 app.get('/hello', (req, res) => {
     console.log(req.query);
-    res.send('Hello' + req.query.name);
+    res.send(`Hello' + ${req.query.name}`);
 });
 app.get('/network', (req, res) => {
-    axios.get ('http://localhost:3001/world')
+    axios.get('http://localhost:3001/world')
     .then((networkResponse) => {
         res.send(networkResponse.data);
     }) //if it doesn't work
